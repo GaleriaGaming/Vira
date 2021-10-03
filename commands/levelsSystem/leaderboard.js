@@ -16,11 +16,11 @@ async execute (client, message, args){
     const target = await Levels.fetchLeaderboard(message.guild.id, 10);
     if(!target) return message.channel.send("❌ **• Nadie en este servidor tiene XP**")
 
-    const map = target.map(m => `**Usuario: <@${m.userID}> - Nivel: ${m.level} - XP: ${m.xp}/${Levels.xpFor(m.level + 1)}**`)
+    const map = target.map((m, i) => `Rank: ${i++}**Usuario: <@${m.userID}> - Nivel: ${m.level} - XP: ${m.xp}/${Levels.xpFor(m.level + 1)}**`)
     
     message.channel.send(new Discord.MessageEmbed()
     .setTitle(`LeaderBoard de XP del servidor ${message.guild.name}`)
-    .setDescription(map.join())
+    .setDescription(map.join('\n'))
     .setThumbnail(message.guild.iconURL())
     .setColor('RANDOM')
     )
