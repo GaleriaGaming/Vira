@@ -126,4 +126,4 @@ client.on('message', async (message) => {
 
 /////////////////////////////////TOKENS/////////////////////////////////
 
-client.login('ODUwNTUyODgzNTM1MTUxMTM0.YLrZGQ.3Tww1bacuHckpzbiChbtKofN3XM');
+client.login('ODUwNTUyODgzNTM1MTUxMTM0.YLrZGQ.3Tww1bacuHckpzbiChbtKofN3XM')
