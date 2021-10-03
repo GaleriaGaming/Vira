@@ -5,7 +5,7 @@ const Schema = require('../../Schemas/afk.js')
 
 module.exports = {
   name: "afk",
-  alias: [],
+  alias: ["afk"],
 
 async execute (client, message, args){
 
