@@ -17,7 +17,7 @@ module.exports = async (client, member) => {
                     console.log(json)
                     const msg = await canal.send(new Discord.MessageEmbed()
                         .setTitle(`Verificacion del servidor ${member.guild.name}`)
-                        .setDescription('Has `<captcha>` en el canal de verificacion')
+                        .setDescription('Escribe el captcha')
                         .setFooter('Solo tiene 30 segundos')
                         .setImage(json.captcha)
                 )
