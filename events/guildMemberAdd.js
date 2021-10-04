@@ -33,7 +33,7 @@ module.exports = async (client, member) => {
                             max : 1,
                             time : 30000,
                             errors : ['time']
-                        }).then(msg => msg.delete())
+                        }).then(m => m.delete())
                         if(response) {
                             msg.channel.send(`✅ **• ${member} Has sido verificado del servidor ${member.guild.name}**`)
                             member.roles.add("891503221762297857")
