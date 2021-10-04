@@ -33,10 +33,11 @@ module.exports = async (client, member) => {
                             max : 1,
                             time : 30000,
                             errors : ['time']
-                        })
+                        }).then(msg => msg.delete())
                         if(response) {
                             msg.channel.send(`✅ **• ${member} Has sido verificado del servidor ${member.guild.name}**`)
                             member.roles.add("891503221762297857")
+                            msg.delete()
                         }
                     } catch (error) {
                         member.send(`Has sido kickeado del servidor ${member.guild.id} por no responder el captcha`).then(member.kick())
