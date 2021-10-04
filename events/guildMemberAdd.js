@@ -15,7 +15,7 @@ module.exports = async (client, member) => {
                 .then(res => res.json())
                 .then(async json => {
                     console.log(json)
-                    const msg = await canal.send(new Discord.MessageEmbed()
+                    const msg = await canal.send(`${member}`, new Discord.MessageEmbed()
                         .setTitle(`Verificacion del servidor ${member.guild.name}`)
                         .setDescription('Escribe el captcha\n\nRecuerda leer las reglas')
                         .setFooter('Solo tiene 30 segundos')
