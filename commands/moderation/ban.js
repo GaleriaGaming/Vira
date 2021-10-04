@@ -24,7 +24,7 @@ execute (client, message, args) {
 
   if (!banReason) return message.channel.send (':x: **• Menciona una razón**')
 
-  user.ban({ reason: banReason})
+  user.ban({ reason: `${message.author.username} | ${banReason}`})
 
   const bembed = new Discord.MessageEmbed()
   .setThumbnail(user.avatarURL)

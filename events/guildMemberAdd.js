@@ -4,6 +4,8 @@ const messageReactionAdd = require('./messageReactionAdd');
 
 module.exports = async (client, member) => {
 
+
+    const canal = client.channels.cache.get('894395193149779999');
     if(member.guild.id !== '861019874105098320') return;
     if(member.bot) return;
 
@@ -13,7 +15,7 @@ module.exports = async (client, member) => {
                 .then(res => res.json())
                 .then(async json => {
                     console.log(json)
-                    const msg = await member.send(new Discord.MessageEmbed()
+                    const msg = await canal.send(new Discord.MessageEmbed()
                         .setTitle(`Verificacion del servidor ${member.guild.name}`)
                         .setDescription('Has `<captcha>` en el canal de verificacion')
                         .setFooter('Solo tiene 30 segundos')
@@ -24,7 +26,7 @@ module.exports = async (client, member) => {
                             if(m.author.bot) return;
                             if(m.author.id === member.id && m.content === json.captcha_text) return true;
                             else {
-                                msg.channel.send("❌ **• Has respondido incorrectamente el captcha**")
+                                msg.channel.send(`❌ **• ${member} Has respondido incorrectamente el captcha**`)
                             }
                         };
                         const response = await msg.channel.awaitMessages(filter, {
@@ -33,16 +35,15 @@ module.exports = async (client, member) => {
                             errors : ['time']
                         })
                         if(response) {
-                            msg.channel.send(`✅ **• Has sido verificado del servidor ${member.guild.name}**`)
+                            msg.channel.send(`✅ **• ${member} Has sido verificado del servidor ${member.guild.name}**`)
                             member.roles.add("891503221762297857")
                         }
                     } catch (error) {
-                        msg.channel.send(`Has sido kickeado del servidor ${member.guild.id} por no responder el captcha`).then(member.kick())
-                        console.log(`${error} ajkln;fdhjklghjkdfghjkld`)
+                        member.send(`Has sido kickeado del servidor ${member.guild.id} por no responder el captcha`).then(member.kick())
                     }
                 })
         } catch (error) {
-            console.log(error)
+
         }
 
 }
