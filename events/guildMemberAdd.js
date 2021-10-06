@@ -4,10 +4,9 @@ const messageReactionAdd = require('./messageReactionAdd');
 
 module.exports = async (client, member) => {
 
-
     const canal = client.channels.cache.get('894395193149779999');
     if(member.guild.id !== '861019874105098320') return;
-    if(member.bot) return;
+    if(member.user.bot) return;
 
     const url = 'https://api.no-api-key.com/api/v2/captcha';
         try {
