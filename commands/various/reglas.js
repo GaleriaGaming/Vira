@@ -14,7 +14,7 @@ async execute (client, message, args){
 
     const rules = await client.channels.cache.get('891460235988979763').messages.fetch('896184979493646356')
     
-    const newRules = args[0];
+    const newRules = args.join(' ').slice(0);
     console.log(newRules)
     if(!newRules) {
         return message.channel.send("❌ **• Debes decir las nuevas reglas (Para poner espacios pon \n)**")
