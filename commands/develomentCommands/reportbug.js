@@ -10,7 +10,7 @@ execute (client, message, args){
 
   message.delete()
 
-  let canalbug = client.channels.cache.get("861363181825818624")
+  let canalbug = client.channels.cache.get("896433533462118450")
   let bugs = args.slice(0).join(" ")
   if(!bugs) return message.channel.send("❌ **• Debes de poner el bug**")
 
