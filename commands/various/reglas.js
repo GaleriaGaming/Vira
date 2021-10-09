@@ -27,7 +27,7 @@ async execute (client, message, args){
         message.channel.send("✅ **• Las reglas han sido cambiadas**")
 
         try {
-            rules.edit()
+            rules.edit(newRulesEmbed)
         } catch (err) {
             console.log(err)
         }
