@@ -19,7 +19,7 @@ async execute (client, message, args){
     const newRules = args.join(' ').slice(0);
     console.log(newRules)
     if(!newRules) {
-        return message.channel.send("❌ **• Debes decir las nuevas reglas (Para poner espacios pon \n)**")
+        return message.channel.send("❌ **• Debes decir las nuevas reglas**")
     } else {
         const newRulesEmbed = new Discord.MessageEmbed()
 
