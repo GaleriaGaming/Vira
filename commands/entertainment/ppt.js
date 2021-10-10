@@ -9,7 +9,7 @@ module.exports = {
 execute (client, message, args){
 
   const opcion = args[0]
-  if(!opcion) return message.channel.send(":x: **• Debes de escribir alguna de las siguientes opciones: Piedra, Papel, Tijera**")
+  if(!args[0]) return message.channel.send(":x: **• Debes de escribir alguna de las siguientes opciones: Piedra, Papel, Tijera**")
 
   let opcionesbot = ["piedra", 'papel', "tijera"]
   let opcionbot = opcionesbot[Math.floor(Math.random() * opcionesbot.length)]
