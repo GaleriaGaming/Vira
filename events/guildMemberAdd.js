@@ -38,7 +38,7 @@ module.exports = async (client, member) => {
                             member.roles.add("891503221762297857")
                         }
                     } catch (error) {
-                        member.send(`Has sido kickeado del servidor ${member.guild.id} por no responder el captcha`).then(member.kick())
+                        member.send(`Has sido kickeado del servidor ${member.guild.name} por no responder el captcha`).then(member.kick())
                     }
                 })
         } catch (error) {
