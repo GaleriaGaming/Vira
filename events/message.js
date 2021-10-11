@@ -29,14 +29,6 @@ console.log(`${message.author.username}: `, `${message.content}`);
     message.channel.send(embed)
     return;
   }
-  /////////////////////////////////PING A GALERIA GAMING/////////////////////////////////
-  if(message.content.match(new RegExp(`^<@!?684580316886859791>( |)$`))){
-    if(message.member.roles.cache.has("865470153587687445")){
-      return;
-    }
-    message.delete()
-    message.channel.send(`-warn ${message.member} regla #6`)
-  }
 /////////////////////////////////AFK/////////////////////////////////
   const newAfk = await afk.findOne({ guild: message.guild.id, user: message.author.id })
     if(newAfk){
