@@ -16,7 +16,7 @@ execute (client, message, args){
  const embed = new Discord.MessageEmbed()
  .setTitle(`Que porcentaje de gay es ${user.tag}`)
  .setDescription(`${user} es ${howgayfinal} gay`)
- message.channel.send(embed)
+ message.channel.send(embed);
  }
 
 }
