@@ -13,7 +13,7 @@ async execute (client, message, args){
   var perms = message.member.hasPermission("ADMINISTRATOR")
   if(!perms) return message.channel.send("❌ **• No tienes permisos suficientes para usar ese comando!**")
 
-  const canal = message.mentions.channels.first() || client.channels.cache.get(id)
+  const canal = message.mentions.channels.first()
   if(!canal) return message.channel.send("❌ **• Debes mencionar un canal**")
 
   let canalservidor = message.guild.channels.resolve(canal.id)

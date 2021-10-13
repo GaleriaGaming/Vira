@@ -20,6 +20,7 @@ execute (client, message, args){
 
     const dinerocantidad = args.slice(1).join(" ")
     if(!dinerocantidad) return message.channel.send(":x: • Necesitas poner una cantidad!")
+    if(dinerocantidad <= 0) return message.channel.send("❌ **• No puedes decir un numero negativo**")
 
     Economia.agregar(user.id, message.guild.id, dinerocantidad)
 

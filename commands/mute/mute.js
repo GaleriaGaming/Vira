@@ -26,6 +26,7 @@ async execute (client, message, args){
 
   let time = args[1]
   if(!time) return message.channel.send(`❌ **• Debes decir el tiempo que ${user} va ha estar muteado\nEjemplo: \`1m, 1h, 1d, 1w\`**`)
+  if(time <= 0) return message.channel.send("❌ **• No puedes decir un numero negativo**")
   const timems = ms(time) 
 
   const razon = args.slice(2).join(' ')
@@ -37,12 +38,15 @@ async execute (client, message, args){
     return message.channel.send("❌ **• Ese usuario ya habia sido muteado**")
   }
 
-  member.roles.add(`${rol}`)
-  message.channel.send(new Discord.MessageEmbed()
-    .setTitle("Usuario muteado")
-    .setDescription(`Moderador:\n<@${message.author.id}>\n\nUsuario muteado:\n<@${user.id}>\n\nTiempo del mute:\n${time}\n\nRazon del mute:\n${razon}`)
+  try{
+    member.roles.add(`${rol}`)
+    message.channel.send(new Discord.MessageEmbed()
+      .setTitle("Usuario muteado")
+      .setDescription(`Moderador:\n<@${message.author.id}>\n\nUsuario muteado:\n<@${user.id}>\n\nTiempo del mute:\n${time}\n\nRazon del mute:\n${razon}`)
     )
-
+  } catch (err) {
+    return message.channel.send("❌ **• El rol para mutear de este servidor fue eliminado**");
+  }
   setTimeout(() => {
 
     user.roles.remove(rol)

@@ -19,11 +19,13 @@ execute (client, message, args){
 
     let time = args[1]
     if(!time) return message.channel.send(':x: **• Especifique un tiempo** **D = dias, H = Horas, M = Minutos, S = Segundos o 1000 = 1 Segundo**')
+    if(time <= 0) return message.channel.send("❌ **• No puedes decir un numero negativo**")
     let timer = ms(time)
 
     if (!banReason) return message.channel.send (':x: **• Menciona una razón**')
 
-    if (message.member.roles.highest.comparePositionTo(member.roles.highest) <= 0) return message.channel.send(":x: **• No puedes banear a alguien con un rol igual o superior a ti!**")
+    if (member.id === client.user.id) return message.channel.send(':(')
+  if (message.member.roles.highest.comparePositionTo(member.roles.highest) <= 0) return message.channel.send("❌ **• No puedes banear a alguien con un rol superior o igual al tuyo**")
 
     const bembed = new Discord.MessageEmbed()
     .setTitle("Usuario baneado temporalmente")

@@ -22,9 +22,12 @@ execute (client, message, args){
   }
 
   if(!time) return message.channel.send(':x: **• Especifique un tiempo** **D = dias, H = Horas, M = Minutos, S = Segundos o 1000 = 1 segundo**')
+  if(isNaN(time)) return message.channel.send("❌ **• Solo puedes decir un numero**")
+  if(time <= 0) return message.channel.send("❌ **• No puedes decir un numero negativo**")
 
   let convert = ms(time)
   let toSecond = Math.floor(convert / 1000)
+  if(convert > 21600000) return message.channel.send("❌ **• No puedes poner un tiempo mayor a 6 horas**")
 
   if(!toSecond || toSecond == undefined) return message.channel.send("**:x: • Tienes que poner un tiempo valido!**")
 

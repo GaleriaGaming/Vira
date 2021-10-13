@@ -18,13 +18,12 @@ execute (client, message, args) {
 
   if(!buser) return message.channel.send(":x: ** • Debes mencionar a alguien!**")
 
-  if (message.member.roles.highest.comparePositionTo(buser.roles.highest) <= 0) return message.channel.send(":x: **• No puedes kickear a alguien con un rol igual o superior a ti!**")
-
   if (buser === message.author) return message.channel.send(":x: **• No te puedes kickear a ti mismo!**")
 
   if (!kickReason) return message.channel.send (':x: **• Menciona una razón**')
 
-   if (message.member.roles.highest.comparePositionTo(buser.roles.highest) <= 0) return message.channel.send(":x: **• No puedes kickear a alguien con un rol igual o superior a ti!**")
+  if (buser.id === client.user.id) return message.channel.send(':(')
+  if (message.member.roles.highest.comparePositionTo(buser.roles.highest) <= 0) return message.channel.send("❌ **• No puedes banear a alguien con un rol superior o igual al tuyo**")
 
   message.guild.member(buser).kick(kickReason);
 

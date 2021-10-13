@@ -28,13 +28,13 @@ async execute (client, message, args){
     const embedeconomia = new Discord.MessageEmbed()
 
     .setTitle("Comandos de Ecomonia")
-    .setDescription("**Prefix: -\n\n\n\nWork\nConsigue dinero trabajando\n\nCrime\nConsigue dinero haciendo un crimen\n\nBal\nRevisa el dinero que tienes\n\nDep <Cantidad>\nSirve para guardar tu dinero en el banco\n\nWith <Cantidad>\nSirve para sacar dinero del banco\n\nAddMoneny <User> <Cantidad>\nEste comandos solo lo puedes usar los admins, sirve para añadir dinero\n\nShop\nTodavia estamos trabajando en ello pero servira para comprar articulos\n\nRob <User>\nSirve para robar a un usuario**")
+    .setDescription("**Prefix: -\n\n\n\nWork\nConsigue dinero trabajando\n\nCrime\nConsigue dinero haciendo un crimen\n\nBalance\nRevisa el dinero que tienes\n\nDep <Cantidad>\nSirve para guardar tu dinero en el banco\n\nWith <Cantidad>\nSirve para sacar dinero del banco\n\nAddMoney <User> <Cantidad>\nEste comandos solo lo puedes usar los admins, sirve para añadir dinero\n\nShop\nTodavia estamos trabajando en ello pero servira para comprar articulos\n\nRob <User>\nSirve para robar a un usuario**")
     .setColor("RANDOM")
 
     const embeddiversion = new Discord.MessageEmbed()
 
-    .setTitle("Comandos de diversion")
-    .setDescription("**Prefix: -\n\n\n\nBuscamians\nSirve para jugar al buscaminas\n\nTicTacToe <User>\nSirve para jugar al TicTacToe\n\nImpostor <User>\nSirve para saber si tu o el usuario que menciones es el impostor\n\nTriggered\nSirve para poner la foto de perfil de un usuario triggered\n\nPPT <Piedra, Papel o Tijera>\nSirve para jugar piedra papel o tijera\n\nMeme <texto, imagen>\nSirve para ver un meme en texto o en una imagen dependiendo de cual eligas**")
+    .setTitle("Comandos de Diversion")
+    .setDescription("**Prefix: -\n\n\n\nBuscaminas\nSirve para jugar al buscaminas\n\nTicTacToe <User>\nSirve para jugar al TicTacToe\n\nImpostor <User>\nSirve para saber si tu o el usuario que menciones es el impostor\n\nTriggered\nSirve para poner la foto de perfil de un usuario triggered\n\nPPT <Piedra, Papel o Tijera>\nSirve para jugar piedra papel o tijera\n\nMeme <texto, imagen>\nSirve para ver un meme en texto o en una imagen dependiendo de cual eligas**")
     .setColor("RANDOM")
 
     const embedvarios = new Discord.MessageEmbed()

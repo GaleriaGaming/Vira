@@ -11,7 +11,7 @@ module.exports = {
 
 async execute (client, message, args){
 
-  if(!args[0]) return message.channel.send("❌ **• Debes de elegir si quieren un meme en exto o imagen**")
+  if(!args[0]) return message.channel.send("❌ **• Debes de elegir si quieren un meme en texto o imagen**")
 
   if(args[0] === 'texto'){
 

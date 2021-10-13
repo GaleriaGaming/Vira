@@ -17,6 +17,7 @@ execute (client, message, args){
     if(!id) return message.channel.send(":x: **• Debes de escribir una ID!**")
 
     const member = client.users.fetch(id)
+    if (member.id === client.user.id) return message.channel.send(':(')
     message.guild.members.ban(id)
 
     message.channel.send(`**:white_check_mark: • La ID ${id} ha sido baneada!**`)
