@@ -17,8 +17,10 @@ async execute (client, message, args){
 
     const user = message.author;
 
-    const cantidad = args[0]
+    const cosa = args[0]
     if(!cantidad) return message.channel.send(":x: • Necesitas poner una cantidad!")
+    if(isNaN(cantidad)) return message.channel.send("❌ **• Solo puedes decir un numero**")
+    const cantidad = Math.floor(cosa)
 
     if(cantidad === 'all'){
         const dinerobancototal = await Banco.ver(user.id, message.guild.id)

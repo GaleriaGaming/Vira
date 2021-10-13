@@ -19,7 +19,7 @@ async execute (client, message, args){
     if(!results) return message.channel.send("❌ **• Ese usuario nunca ha tenido algun warn**");
     if(!results.warnings[0]) return message.channel.send("❌ **• Ese usuario no tiene ningun warn**");
     message.channel.send(new Discord.MessageEmbed()
-      .setTitle(`Warns de ${mention.tag}`)
+      .setTitle(`Warns de ${mention.user.tag}`)
       .setDescription(results.warnings.map((w, i) => `\n**#${i+1} - ${w.reason}**`).toString())
       .setColor("RANDON")
       .setFooter(`Warn: ${results.warnings.length}`)

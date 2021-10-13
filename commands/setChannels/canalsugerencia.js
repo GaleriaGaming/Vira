@@ -14,6 +14,7 @@ execute (client, message, args){
 
   const canal = message.mentions.channels.first()
   if(!canal) return message.channel.send("❌ **• Debes mencionar un canal**")
+  if(canal.type === 'voice') return message.channel.send("❌ **• No puedes elegir un canal de voz**")
 
   Schema.findOne({ guild: message.guild.id}, async(err, data) => {
     if(data) data.delete();

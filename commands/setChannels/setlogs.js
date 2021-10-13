@@ -15,6 +15,7 @@ async execute (client, message, args){
 
   const canal = message.mentions.channels.first()
   if(!canal) return message.channel.send("❌ **• Debes mencionar un canal**")
+  if(canal.type === 'voice') return message.channel.send("❌ **• No puedes elegir un canal de voz**")
 
   let canalservidor = message.guild.channels.resolve(canal.id)
   if(!canalservidor) return message.channel.send("❌ **• Debes de poner un canal de este servidor**")
