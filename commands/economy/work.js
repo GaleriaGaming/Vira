@@ -35,12 +35,11 @@ async execute (client, message, args){
     let randomtrabajo = trabajo[Math.floor(Math.random() *trabajo.length)]
     
     const work = economia.trabajar(user.id, message.guild.id, random)
-    console.log(work)
 
     const embed = new Discord.MessageEmbed()
 
     .setTitle("Trabajo")
-    .setDescription(`**El usuario ${user} ha trabajado de ${randomtrabajo} y ganó ${random}$**`)
+    .setDescription(`**El usuario ${user} ha trabajado de ${randomtrabajo} y ganó ${work}$**`)
 
     message.channel.send(embed)
  
