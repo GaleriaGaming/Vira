@@ -26,7 +26,7 @@ async execute (client, message, args){
   const warning = {
     author: message.member.user.tag,
     timestamp: new Date().getTime(),
-    reason + `(por: ${message.author})`
+    `${reason} (por: ${message.author})`
   };
     try{
       await Schema.findOneAndUpdate({
