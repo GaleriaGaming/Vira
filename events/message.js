@@ -56,7 +56,7 @@ console.log(`${message.author.username}: `, `${message.content}`);
   if(cosa) {
     prefix = await cosa.prefix
   } else {
-    let prefix = '-'
+    prefix = '-'
   }
 
   if (!message.content.startsWith(prefix)) return;
