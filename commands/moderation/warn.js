@@ -17,8 +17,9 @@ async execute (client, message, args){
   if(user === message.author) return message.channel.send("❌ **• No te puedes mutear a ti mismo**");
   if(!user) return message.channel.send("❌ **• Debes mencionar a alguien!**");
 
-  let reason = args.slice(1).join(" ");
-  if(!reason) reason = "Sin especificar";
+  let cosa = args.slice(1).join(" ");
+  if(!cosa) cosa = `Sin especificar`;
+  let reason = `${cosa} (por: ${message.author.id})`
 
   if (user.id === client.user.id) return message.channel.send(':(')
   if (message.member.roles.highest.comparePositionTo(user.roles.highest) <= 0) return message.channel.send("❌ **• No puedes banear a alguien con un rol superior o igual al tuyo**")
@@ -26,7 +27,7 @@ async execute (client, message, args){
   const warning = {
     author: message.member.user.tag,
     timestamp: new Date().getTime(),
-    `${reason} (por: ${message.author})`
+    reason
   };
     try{
       await Schema.findOneAndUpdate({
