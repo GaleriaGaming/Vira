@@ -51,7 +51,7 @@ console.log(`${message.author.username}: `, `${message.content}`);
   }else;
 
   const SetPrefix = require('../Schemas/setprefix');
-  const cosa = await SetPrefix.findOne({ guild: message.guild.id })
+  const cosa = await SetPrefix.find({ guild: message.guild.id })
   let prefix;
   if(cosa) {
     prefix = await cosa.prefix
