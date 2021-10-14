@@ -8,7 +8,7 @@ module.exports = {
   name: "giveaway",
   alias: ["sorteo"],
 
-execute (client, message, args){
+async execute (client, message, args){
 
   var perms  = message.member.hasPermission("MANAGE_EMOJIS")
   if(!perms) return message.channel.send(":x: **• No tienes permisos suficientes para usar ese comando!**")
