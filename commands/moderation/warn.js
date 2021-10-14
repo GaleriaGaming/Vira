@@ -19,7 +19,7 @@ async execute (client, message, args){
 
   let cosa = args.slice(1).join(" ");
   if(!cosa) cosa = `Sin especificar`;
-  let reason = `${cosa} (por: ${message.author.id})`
+  let reason = `${cosa} (por: ${message.author})`
 
   if (user.id === client.user.id) return message.channel.send(':(')
   if (message.member.roles.highest.comparePositionTo(user.roles.highest) <= 0) return message.channel.send("❌ **• No puedes banear a alguien con un rol superior o igual al tuyo**")
