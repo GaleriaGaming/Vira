@@ -3,7 +3,6 @@ const client = new Discord.Client({intents: 32767});
 const disbut = require('discord-buttons');
 disbut(client);
 require('dotenv').config();
-const { prefix } = require("./config.json")
 
 const { Client, MessageEmbed, Collection, Guild } = require('discord.js'); 
 
@@ -106,6 +105,14 @@ client.on('message', async (message) => {
     
   }
 /////////////////////////////////HANDLER/////////////////////////////////
+const SetPrefix = require('./Schemas/setprefix');
+const cosa = await SetPrefix.findOne({ guild: message.guild.id })
+let prefix;
+if(cosa) {
+  prefix = await cosa.prefix
+} else {
+  let prefix = '-'
+}
   if(!message.content.startsWith(prefix)) return;
   let usuario = message.mentions.members.first() || message.member;
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
