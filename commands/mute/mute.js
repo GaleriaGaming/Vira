@@ -38,6 +38,9 @@ async execute (client, message, args){
     return message.channel.send("❌ **• Ese usuario ya habia sido muteado**")
   }
 
+  if(user.id === client.user.id) return message.channel.send(":(")
+  if(user.id === message.author.id) return message.channel.send("❌ **• No te puedes mutear a ti mismo**")
+
   try{
     member.roles.add(`${rol}`)
     message.channel.send(new Discord.MessageEmbed()

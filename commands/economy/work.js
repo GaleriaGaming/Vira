@@ -39,7 +39,7 @@ async execute (client, message, args){
     const embed = new Discord.MessageEmbed()
 
     .setTitle("Trabajo")
-    .setDescription(`**El usuario ${user} ha trabajado de ${randomtrabajo} y ganó ${work}$**`)
+    .setDescription(`**El usuario ${user} ha trabajado de ${randomtrabajo} y ganó ${random}$**`)
 
     message.channel.send(embed)
  
