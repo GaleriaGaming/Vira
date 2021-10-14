@@ -48,11 +48,11 @@ async execute (client, message, args){
     }
     const embedSuccess = new Discord.MessageEmbed()
     .setTitle('Usuario Warneado')
-    .setDescription(`Usuario: <@${user.id}>\nModerador: <@${message.author.id}>\nRazon: ${reason}`)
+    .setDescription(`Usuario: <@${user.id}>\nModerador: <@${message.author.id}>\nRazon: ${cosa}`)
     .setColor("RANDOM")
     const embedUser = new Discord.MessageEmbed()
     .setTitle('Has sido warneado!')
-    .setDescription(`Info: \n\`\`\`Razon: ${reason}\nStaff: ${message.author.tag}\nServidor: ${message.guild}\`\`\``)
+    .setDescription(`Info: \n\`\`\`Razon: ${cosa}\nStaff: ${message.author.tag}\nServidor: ${message.guild}\`\`\``)
     .setFooter('Comportate mejor!')
     .setColor("RANDOM")
     message.channel.send(embedSuccess)
