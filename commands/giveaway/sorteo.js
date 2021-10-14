@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 const ms = require("ms")
-
+const Schema = require('../../Schemas/canalsorteos')
 
 module.exports = {
   name: "giveaway",
@@ -13,7 +13,12 @@ execute (client, message, args){
   var perms  = message.member.hasPermission("MANAGE_EMOJIS")
   if(!perms) return message.channel.send(":x: **• No tienes permisos suficientes para usar ese comando!**")
 
-  let channel = client.channels.cache.get("862505885141958656")
+  const data = await LevelChannel.findOne({ guild: message.guild.id })
+    if(data){
+      const channel = data.channel;
+    } else {
+      message.channel.send("❌ **• Este servidor no tiene un canal para mandar sorteos**")
+    }
 
   let giveawayDuration = args[0]
   if(!giveawayDuration || isNaN(ms(giveawayDuration))) return message.channel.send("❌ **• Especifique una duracion valida   D = dias, H = Horas, M = Minutos, S = Segundos o 1000 = 1 Segundo**")
@@ -49,8 +54,12 @@ execute (client, message, args){
     }
   })
 
+  try {
   message.channel.send(`✅ **• Se ha empezado el sorteo en ${channel}**`)
- 
+ } catch (err) {
+   message.channel.send("❌ **• Se ha eliminado el canal para mandar sorteos**")
+ }
+
  }
 
 }

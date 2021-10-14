@@ -39,7 +39,7 @@ async execute (client, message, args){
 
     const embedvarios = new Discord.MessageEmbed()
 
-    .setTitle("Comandos varios")
+    .setTitle("Comandos Varios")
     .setDescription("**Prefix: -\n\n\n\nPing\nRevisa cuanto ping tienes\n\nSay <Texto>\nDigo lo que quieras\n\nSayChannel <Canal> <Texto>\nDigo lo que quieras en el canal que quieras ||Solo lo pueden usar administradores||\n\nUserInfo <User>\nSirve para saber la informacion de un usuario\n\nServerInfo\nSirve para saber la informacion del servidor\n\nSugerencia <Sugerencia>\nSirve para sugerir algo\n\nPoll\nSirve para hacer una encuesta\n\nJumbo <Emoji>\nSirve para tener la imagen del emoji que pongas\n\nAvatar <User>\nSirve para tener la foto de perfil de usuario que menciones\n\nNuke\nSirve para borrar todos los mensajes de canal en el que lo hagas ||Solo lo pueden los fundadores||\n\nUptime\nSirve para ver cuanto tiempo llebo prendido\n\nEval <Codigo>\nSirve para probar un codigo ||Solo lo puede usar <@684580316886859791>||\n\nReportBug <Bug>\nSirve para reportar bugs a <@684580316886859791> para que los arregle ||Si reportas bugs solo para fastidiar vas a ser waneado o baneado||\n\nSetlogs <Canal>\nCon este comando puedes escoger en que canal se mandaran los logs\n\nCanalSugerencias <Canal>\nCon este comando puedes escoger en que canal se mandaran las sugerencias\n\nVotarSugerencia <ID>\nCon este comando los admins pueden dar el voto final de una sugerencia\n\nInvite\nEste comando sirve para que mande la invitacion del servidor de mi creador**")
     .setColor("RANDOM")
 
@@ -52,7 +52,7 @@ async execute (client, message, args){
     const embedniveles = new Discord.MessageEmbed()
 
     .setTitle("Comandos de Niveles")
-    .setDescription("**Prefix: -\n\n\n\nLevel\nSirve para sirve cual es tu nivel y cantidad de experiencia\n\nLeaderboardLevel\nSirve apra ver la tabla de posiciones del servidor\n\nAddlevel <User> <Cantidad>\nSirve para añadir una cantidad de niveles a quien pinguees o a ti mismo ||Solo lo pueden usar personas con el permiso de Administrador||**")
+    .setDescription("**Prefix: -\n\n\n\nNivel\nSirve para sirve cual es tu nivel y cantidad de experiencia\n\nLeaderboard\nSirve apra ver la tabla de posiciones del servidor\n\nAddlevel <User> <Cantidad>\nSirve para añadir una cantidad de niveles a quien pinguees o a ti mismo ||Solo lo pueden usar personas con el permiso de Administrador||**")
     .setColor("RANDOM")
 
     let opcionmoderacion = new MessageMenuOption()
