@@ -13,16 +13,15 @@ module.exports = {
 
 async execute (client, message, args){
 
-    const url = 'https://api.no-api-key.com/api/v2/captcha';
-    try {
-      fetch(url)
-        .then(res => res.json())
-        .then(async json => {
-          message.channel.send(json.captcha)
-        })
-    } catch (error) {
-      console.log(error)
-    }
+  var perms = message.member.hasPermission("ADMINISTRATOR");
+  if(!perms) return message.channel.send("❌ **• No tienes permisos suficientes para usar ese comando!**");
+
+  const user = message.mentions.members.first();
+  if(!user) return message.channel.send("❌ **• Debes mencionar a alguien!**");
+
+  user.roles.add('891503221762297857');
+
+
     
  }
 
