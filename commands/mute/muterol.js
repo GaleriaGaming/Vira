@@ -15,8 +15,6 @@ async execute (client, message, args){
   let rol = message.mentions.roles.first()
   if(!rol) return message.channel.send("❌ **• Debes de mencionar un rol**")
 
-  if (client.user.roles.highest.comparePositionTo(rol) <= 0) return message.channel.send("❌ **• No puedo usar un rol igual o superior al mio para mutear**");
-
   const server = Schema.findOne({ guild: message.guild.id })
 
   Schema.findOne({ guild: message.guild.id}, async(err, data) => {
