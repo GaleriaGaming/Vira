@@ -30,17 +30,16 @@ async execute (client, message, args){
     const user = message.author;
 
     let random = Math.floor(Math.random() *175) + 100
-    const cosa = random
 
     let trabajo = ["policia", "profesor", "bombero", "youtuber", "streamer", "developer", "programador"]
     let randomtrabajo = trabajo[Math.floor(Math.random() *trabajo.length)]
     
-    const work = economia.trabajar(user.id, message.guild.id, cosa)
+    const work = economia.trabajar(user.id, message.guild.id, random)
 
     const embed = new Discord.MessageEmbed()
 
     .setTitle("Trabajo")
-    .setDescription(`**El usuario ${user} ha trabajado de ${randomtrabajo} y ganó ${cosa}$**`)
+    .setDescription(`**El usuario ${user} ha trabajado de ${randomtrabajo} y ganó ${random}$**`)
 
     message.channel.send(embed)
  
