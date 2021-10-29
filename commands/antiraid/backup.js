@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
-const backup = require('discord-backup')
-backup.setStorageFolder(__dirname+"/backups/")
+const backup = require('discord-backup');
+backup.setStorageFolder(__dirname+"/backups/");
 
 module.exports = {
   name: "backup",
