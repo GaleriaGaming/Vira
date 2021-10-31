@@ -11,7 +11,7 @@ module.exports = {
 execute (client, message, args){
 
   const accion = args[0]
-  if(!accion) return message.channel.send("❌ **• Debes decir que vas a hacer ( create / load )**")
+  if(!accion) return message.channel.send("❌ **• Debes decir que vas a hacer ( create / load )**");
 
   if(accion === 'create'){
 
