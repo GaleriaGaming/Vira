@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-const Schema = require('../../Schemas')
+const Schema = require('../../Schemas/token-grappers')
 
 module.exports = {
   name: "token-grappers",
-  alias: [""],
+  alias: [],
 
   /**
   * @param {Discord.Client} client
