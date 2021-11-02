@@ -12,15 +12,12 @@ module.exports = {
   **/
 
 async execute (client, message, args){
-  console.log('sda')
 
     var perms = message.member.hasPermission("ADMINISTRATOR");
     if(!perms) return message.channel.send("❌ **• No tienes permisos suficientes para usar ese comando!**");
-    console.log('dsa')
 
-    const razon = args.slice(0);
+    const razon = args[0];
     if(!razon) return message.channel.send("❌ **• Debes decir que quieres hacer ( activar / desactivar )**");
-    console.log('asd')
 
     if(razon === 'activar'){
         Schema.findOne({ guild: message.guild.id}, async(err, data) => {
