@@ -362,7 +362,7 @@ console.log(`${message.author.username}: `, `${message.content}`);
     "discord-give.com"
   ];
 
-  Schema.findOne({ guild: message.guild.id}, async(err, data) => {
+  Schema.find({ guild: message.guild.id}, async(err, data) => {
     console.log('asd')
     if(data.activate === 'true'){
       console.log('adfsfs')
