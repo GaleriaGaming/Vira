@@ -362,7 +362,9 @@ console.log(`${message.author.username}: `, `${message.content}`);
     "discord-give.com"
   ];
 
-  const data = tokenGrappers.find({ guild: message.guild.id})
+  const data = tokenGrappers.find({ guild: message.guild.id}, (data) => {
+    console.log('adsa')
+  })
     if(data.activate === 'true'){
       console.log('dsa')
       if(links.some(word => message.content.toLowerCase().includes(word))){
