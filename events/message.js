@@ -362,13 +362,13 @@ console.log(`${message.author.username}: `, `${message.content}`);
     "discord-give.com"
   ];
 
-  const data = tokenGrappers.findOne({ guild: message.guild.id})
+  const data = tokenGrappers.find({ guild: message.guild.id})
     if(data.activate === 'true'){
       console.log('dsa')
       if(links.some(word => message.content.toLowerCase().includes(word))){
         deleteMessage()
       console.log("sda")
       }
-    } else return;
+    }else return;
 
 }
