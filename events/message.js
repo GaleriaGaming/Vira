@@ -56,6 +56,7 @@ console.log(`${message.author.username}: `, `${message.content}`);
 /////////////////////////////////Anti Token-Grappers/////////////////////////////////
 
   const deleteMessage = () => {
+    console.log('asd')
     message.delete()
     message.member.kick("Enviar token grapper")
   };
@@ -361,12 +362,13 @@ console.log(`${message.author.username}: `, `${message.content}`);
     "discord-give.com"
   ];
 
-  tokenGrappers.findOne({ guild: message.guild.id}, async(err, data) => {
-    if(data){
+  const data = tokenGrappers.findOne({ guild: message.guild.id})
+    if(data.activate === 'true'){
+      console.log('dsa')
       if(links.some(word => message.content.toLowerCase().includes(word))){
         deleteMessage()
+      console.log("sda")
       }
-    }
-  })
+    } else return;
 
 }
