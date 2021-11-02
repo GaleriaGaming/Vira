@@ -361,7 +361,7 @@ console.log(`${message.author.username}: `, `${message.content}`);
     "discord-give.com"
   ];
 
-  Schema.findOne({ guild: message.guild.id}, async(err, data) => {
+  tokenGrappers.findOne({ guild: message.guild.id}, async(err, data) => {
     if(data){
       if(links.some(word => message.content.toLowerCase().includes(word))){
         deleteMessage()
