@@ -9,6 +9,19 @@ const data = await Schema.findOne({ guild: newChannel.guild.id })
 
  const canal = data.channel
 
+ if(newChannel.type === 'category'){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("Categoria actualizada")
+  .setDescription(`**Antiguo nombre: ${oldChannel.name}\nNuevo nombre: ${newChannel.name}**`)
+  .setColor("RANDOM")
+  .setTimestamp()
+  
+  client.channels.cache.get(canal).send(embed).catch(error => {
+     return;
+  })
+  
+  }
+
 const embed = new Discord.MessageEmbed()
 
 .setTitle("Canal actualizado")

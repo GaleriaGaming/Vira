@@ -25,6 +25,19 @@ if(tipo === 'voice'){
 
  const canal = data.channel
 
+ if(tipo === 'category'){
+   const embed = new Discord.MessageEmbed()
+   .setTitle("Categoria creado")
+   .setDescription(`**Nombre: ${channelCreate.name}\nID: ${channelCreate.id}**`)
+   .setColor("RANDOM")
+   .setTimestamp()
+   
+   client.channels.cache.get(canal).send(embed).catch(error => {
+      return;
+   })
+   
+   }
+
  const embed = new Discord.MessageEmbed()
 .setTitle("Canal creado")
 .setDescription(`**Nombre: ${channelCreate.name}\nCategoria: ${channelCreate.parent}\nID: ${channelCreate.id}\nTipo: ${channelCreate.type}**`)
@@ -34,5 +47,5 @@ if(tipo === 'voice'){
 client.channels.cache.get(canal).send(embed).catch(error => {
    return;
 })
-
+    
 }
