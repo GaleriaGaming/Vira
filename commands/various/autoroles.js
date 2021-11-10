@@ -13,6 +13,8 @@ module.exports = {
 
 async execute (client, message, args){
 
+        if(message.guild.id !== '861019874105098320') return message.channel.send("❌ **• Solo puedes usar ese comando en el server de mi creador**")
+
         const embedespera = new Discord.MessageEmbed()
         .setTitle('Espera')
         .setDescription('Espera un momento a que carguen todas las reacciones')

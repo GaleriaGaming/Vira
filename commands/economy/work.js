@@ -17,6 +17,7 @@ async execute (client, message, args){
 
     if(cooldown.has(message.author.id)){
       message.channel.send(`${message.author}, espera 1 minuto para volver a usar ese comando`)
+      return;
     }
 
     cooldown.add(message.author.id);
