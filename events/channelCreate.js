@@ -35,7 +35,7 @@ if(tipo === 'voice'){
    client.channels.cache.get(canal).send(embed).catch(error => {
       return;
    })
-   
+      return;
    }
 
  const embed = new Discord.MessageEmbed()

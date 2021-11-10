@@ -19,7 +19,7 @@ const data = await Schema.findOne({ guild: newChannel.guild.id })
   client.channels.cache.get(canal).send(embed).catch(error => {
      return;
   })
-  
+    return;
   }
 
 const embed = new Discord.MessageEmbed()

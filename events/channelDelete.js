@@ -24,14 +24,14 @@ const canal = data.channel
 if(tipo === 'category'){
     const embed = new Discord.MessageEmbed()
     .setTitle("Categoria eliminada")
-    .setDescription(`**Nombre: ${channelDelete.name}\nID: ${channelCreate.id}**`)
+    .setDescription(`**Nombre: ${channelDelete.name}\nID: ${channelDelete.id}**`)
     .setColor("RANDOM")
     .setTimestamp()
     
     client.channels.cache.get(canal).send(embed).catch(error => {
        return;
     })
-    
+        return;
     }
 
 const embed = new Discord.MessageEmbed()
