@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 const zeew = require("zeew-eco")
 const Economia = new zeew.Economia()
-const Banco = new zeew.Banco()
+const Banco = new zeew.Banco();
 require('dotenv').config
 new zeew.Options('mongodb+srv://ViraDatabaseInMongoDB:1042312693@vira.hmcfo.mongodb.net/Data')
 
