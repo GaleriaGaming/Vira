@@ -9,7 +9,7 @@ module.exports = {
 
 execute (client, message, args){
 
-  const queue = client.distube.get(queue)
+  const queue = client.distube.getQueue(message)
 
   if(!message.member.voice.channel) return message.channel.send("**Debes de entrar en un canal de voz**")
 
@@ -18,7 +18,7 @@ execute (client, message, args){
   if(!queue) return message.channel.send("**No hay canciones reproduciendose**")
 
   const opcion = args[0]
-  if(!opcion) message.chanenl.send("**Debes escribir una opcion (0 / 1 / 2)**")
+  if(!opcion) message.channel.send("**Debes escribir una opcion (0 / 1 / 2)**")
   if(!isNaN) return message.channel.send("**Debes decir un numero**")
 
   if(opcion === '0'){

@@ -55,6 +55,12 @@ async execute (client, message, args){
     .setDescription("**Prefix: -\n\n\n\nNivel\nSirve para sirve cual es tu nivel y cantidad de experiencia\n\nLeaderboard\nSirve apra ver la tabla de posiciones del servidor\n\nAddlevel <User> <Cantidad>\nSirve para añadir una cantidad de niveles a quien pinguees o a ti mismo ||Solo lo pueden usar personas con el permiso de Administrador||**")
     .setColor("RANDOM")
 
+    const embedmusica = new Discord.MessageEmbed()
+
+    setTitle("Comandos de Musica")
+    .setDescription("Prefix: v!\n\n\n\n`Play/p <cancion/playlist>`\nSirve para poner una cancion o una playlist mediante su nombre o su link de youtube\n\n`Stop`\nSirve para detener todas las canciones o playlists que esten en la cola o sonando\n\n`Pause`\nSirve apara pausar la cancion que esta sonando\n\n`Continue`\nSirve para despausar la cancion que esta pausada\n\n`Volume <1/100>`\nSirve para determinar el volumen de la cancion que este sonando\n\n`loop <0, 1, 2>`\nSirve para repetir la cancion o la queue dependiendo del numero que sea (0: Desactivar, 1: Repetir la cancion, 2: Repetir la queue)\n\n`Queue`\nSirve para ver las 10 primeras cancion de la cola\n\n`Skip`\nSirve para saltar la cancion que esta sonando por la siguiente de la cola")
+    .setColor("RANDOM")
+
     let opcionmoderacion = new MessageMenuOption()
     
     .setEmoji("👑")
@@ -97,6 +103,13 @@ async execute (client, message, args){
     .setLabel("Niveles")
     .setDescription("Click aqui para ver los comandos de niveles")
 
+    let opcionmusica = new MessageMenuOption()
+
+    .setEmoji("🎧")
+    .setValue("7")
+    .setLabel("Musica")
+    .setLabel("Click aqui para ver los comandos de musica")
+
     let menu = new MessageMenu()
 
     .setID("98")
@@ -107,6 +120,7 @@ async execute (client, message, args){
     .addOption(opcionmoderacion)
     .addOption(opciongiveaway)
     .addOption(opcionniveles)
+    .addOption(opcionmusica)
 
     const msg = await message.channel.send(embedprincipal, menu)
 
@@ -116,7 +130,7 @@ async execute (client, message, args){
     collector.on('collect', (menu) => {
       if(menu.values[0] === '1'){
         menu.reply.defer()
-        return menu.message.edit(embedmoderacion)
+        return menu.message.edit(embedmoderacion) 
       }
       if(menu.values[0] === '2'){
         menu.reply.defer()
@@ -137,6 +151,10 @@ async execute (client, message, args){
       if(menu.values[0] === '6'){
         menu.reply.defer()
         return menu.message.edit(embedniveles)
+      }
+      if(menu.values[0] === '7'){
+        menu.reply.defer()
+        return menu.message.edit(embedmusica)
       }
     })
 
