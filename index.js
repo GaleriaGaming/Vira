@@ -124,6 +124,58 @@ client.on('message', async (message) => {
   }
 });
 
+/////////////////////////////////Distube/////////////////////////////////
+
+const Distube = require('distube')
+client.distube = new Distube(client, {
+  emitNewSongOnly: true,
+  seachSongs: false,
+  leaveOnStop: true,
+  leaveOnFinish: true,
+  leaveOnEmpty: true
+});
+
+client.distube.on("addList", (message, queue, playList) => {
+  const embed = new Discord.MessageEmbed()
+
+  .setTitle("PlayList Añadida")
+  .setDescription(`**PlayList: ${playList.name}**`, `**Videos de la Playlist: ${playList.songs.lenght}**\n\n\n${playList.link}`)
+
+  message.channel.send(embed)
+})
+
+client.distube.on("addSong", (message, queue, song) => {
+  const embed = new Discord.MessageEmbed()
+
+  .setTitle("Cancion Añadida")
+  .setDescription(`**Cancion: ${song.name}**`, `**Duracion de la Cancion: ${song.formattedDuration}**\n\n\n${song.link}`)
+
+  message.channel.send(embed)
+})
+
+client.distube.on("playSong", (message, queue, playSong) => {
+  const embed = new Discord.MessageEmbed()
+
+  .setTitle("Reproduciendo Cancion")
+  .setDescription(`**Cancion: ${playSong.name}**`, `**Duracion de la Cancion: ${playSong.formattedDuration}**\n\n\n${playSong.link}`)
+
+  message.channel.send(embed)
+})  
+
+client.distube.on("playList", (message, queue, playList) => {
+  const embed = new Discord.MessageEmbed()
+
+  .setTitle("Reproduciendo PlayList")
+  .setDescription(`**PlayList: ${playList.name}**`, `**Videos de la PlayList: ${playList.songs.lenght}**\n\n\n${playList.link}`)
+
+  message.channel.send(embed)
+})
+
+client.distube.on("error", (message, error) => {
+  console.log(error)
+  message.channel.send("Ha ocurrido un error")
+})
+
 /////////////////////////////////TOKENS/////////////////////////////////
 
 client.login('ODUwNTUyODgzNTM1MTUxMTM0.YLrZGQ.rWUqWhUBdE-5625Zv1Usfk-yjMM');
