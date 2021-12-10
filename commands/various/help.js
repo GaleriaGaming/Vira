@@ -16,7 +16,7 @@ async execute (client, message, args){
     const embedprincipal = new Discord.MessageEmbed()
 
     .setTitle("Bienvenido al apartado de Ayuda")
-    .setDescription('**Prefix: -\n\n\n\n:money_with_wings:: Apartado de economia\n\n:video_game:: Apartado de Entretenimiento\n\n:sunglasses:: apartado de Varios\n\n:crown:: Apartado de Moderación\n\n:gift:: Apartado de giveaways\n\n🥇: Apartado de niveles\n\n\n\n||Recuerda que solo puedes usar este mensaje por 1 minuto||**')
+    .setDescription('**Prefix: -\n\n\n\n:money_with_wings:: Apartado de economia\n\n:video_game:: Apartado de Entretenimiento\n\n:sunglasses:: apartado de Varios\n\n:crown:: Apartado de Moderación\n\n:gift:: Apartado de giveaways\n\n🥇: Apartado de niveles\n\n>🎧: Apartado de musica\n\n\n\n||Recuerda que solo puedes usar este mensaje por 1 minuto y que solo el autor del mensaje puede cambiar de apartado||**')
     .setColor("RANDOM")
 
     const embedmoderacion = new Discord.MessageEmbed()
