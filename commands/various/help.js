@@ -57,7 +57,7 @@ async execute (client, message, args){
 
     const embedmusica = new Discord.MessageEmbed()
 
-    setTitle("Comandos de Musica")
+    .setTitle("Comandos de Musica")
     .setDescription("Prefix: v!\n\n\n\n`Play/p <cancion/playlist>`\nSirve para poner una cancion o una playlist mediante su nombre o su link de youtube\n\n`Stop`\nSirve para detener todas las canciones o playlists que esten en la cola o sonando\n\n`Pause`\nSirve apara pausar la cancion que esta sonando\n\n`Continue`\nSirve para despausar la cancion que esta pausada\n\n`Volume <1/100>`\nSirve para determinar el volumen de la cancion que este sonando\n\n`loop <0, 1, 2>`\nSirve para repetir la cancion o la queue dependiendo del numero que sea (0: Desactivar, 1: Repetir la cancion, 2: Repetir la queue)\n\n`Queue`\nSirve para ver las 10 primeras cancion de la cola\n\n`Skip`\nSirve para saltar la cancion que esta sonando por la siguiente de la cola")
     .setColor("RANDOM")
 
