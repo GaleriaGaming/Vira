@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
-const { MessageMenuOption, MessageMenu } = require('discord-buttons')
+const { MessageMenuOption, MessageMenu } = require('discord-buttons');
 
 module.exports = {
   name: "help",
