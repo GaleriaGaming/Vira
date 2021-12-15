@@ -76,7 +76,7 @@ execute (client, message, args){
     })
   }
 
-  if(!accion === 'create' || !accion === 'load') return message.channel.send("❌ **• Debes decir que vas a hacer ( create / load )**")
+  if(!accion === 'create' || !accion === 'load') return message.channel.send("❌ **• Debes decir que vas a hacer ( create / load )**");
  
  }
 
