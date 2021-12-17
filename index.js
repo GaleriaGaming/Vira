@@ -121,7 +121,7 @@ client.on('message', async (message) => {
 client.on('message', async (message) => {
   if(!message.type === 'dm'){
   await require("./blockInvites")(message)
-  }
+  };
 });
 
 /////////////////////////////////Distube/////////////////////////////////
