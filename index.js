@@ -174,7 +174,7 @@ client.distube.on("playList", (message, queue, playList) => {
 client.distube.on("error", (message, error) => {
   console.log(error)
   message.channel.send("Ha ocurrido un error")
-})
+});
 
 /////////////////////////////////TOKENS/////////////////////////////////
 
