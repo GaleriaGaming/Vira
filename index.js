@@ -173,7 +173,3 @@ client.distube.on("error", (message, error) => {
   console.log(error)
   message.channel.send("Ha ocurrido un error")
 });
-
-/////////////////////////////////TOKENS/////////////////////////////////
-
-client.login('ODUwNTUyODgzNTM1MTUxMTM0.YLrZGQ.rWUqWhUBdE-5625Zv1Usfk-yjMM');
