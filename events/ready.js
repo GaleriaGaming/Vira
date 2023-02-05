@@ -27,8 +27,6 @@ const { name, version } = require('../config.json');
     presence();
   }, 7000)
 
-  await client.channels.cache.get('891460235988979763').messages.fetch('896195492092969010').then(m => console.log("Se ha cargado la las reglas"))
-
   console.log(`\n\nNombre: ${name}\nVersion: ${version}`)
 
 }

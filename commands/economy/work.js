@@ -30,7 +30,7 @@ async execute (client, message, args){
 
     const user = message.author;
 
-    let random = Math.floor(Math.random() *175) + 100
+    let random = Math.floor(Math.random() *175) + 1
 
     let trabajo = ["policia", "profesor", "bombero", "youtuber", "streamer", "developer", "programador"]
     let randomtrabajo = trabajo[Math.floor(Math.random() *trabajo.length)]

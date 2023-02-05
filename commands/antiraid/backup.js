@@ -45,7 +45,7 @@ execute (client, message, args){
 
   if(accion === 'load'){
 
-    if(message.author.id !== message.guild.owner.id) return message.channel.send("❌ **• Solo el owner del servidor puede usar ese comando**")
+    if(message.author.id !== message.guild.owner.id) return message.channel.send("❌ **• Solo el owner del servidor puede usar ese comando**");
 
     let backupID = args[1]
     if(!backupID) return message.chnanel.send("❌ **• Debes decirme el ID del backup**")

@@ -3,7 +3,6 @@ const { prefix, version, name } = require("../config.json")
 const { MessageEmbed } = require("discord.js")
 
 const afk = require('../Schemas/afk.js')
-const tokenGrappers = require('../Schemas/token-grappers');
 
 module.exports = async (client, message) => {
 
@@ -52,7 +51,5 @@ console.log(`${message.author.username}: `, `${message.content}`);
   }else;
 
   if (!message.content.startsWith(prefix)) return;
-
-/////////////////////////////////Anti Token-Grappers/////////////////////////////////
 
 }

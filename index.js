@@ -78,8 +78,6 @@ client.on('message', async (message) => {
   Levels.setURL('mongodb+srv://ViraDatabaseInMongoDB:1042312693@vira.hmcfo.mongodb.net/Data');
   const LevelChannel = require('./Schemas/canalniveles');
 
-  if(message.author.bot) return;
-
   const randomXP = Math.floor(Math.random() * message.content.length) + 1
 
   const hasLeveldUP = await Levels.appendXp(message.author.id, message.guild.id, randomXP)

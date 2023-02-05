@@ -21,7 +21,7 @@ async execute (client, message, args){
       (await message.channel.messages.fetch({ limit: cantidad })).filter(
       (m) => m.id !== message.id
       )
-    ).then((messages) => {
+    ).then((messages) => { 
       if(cantidad === 99) cantidad = 100;
       message.channel.send(`Se borraron ${cantidad} mensajes`).then((msg) => {
         msg.delete({ timeout: 1500});
