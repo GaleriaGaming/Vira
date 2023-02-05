@@ -1,4 +1,0 @@
-("❌ **•**")
-("❌ **• No tienes permisos suficientes para usar ese comando!**")
-("❌ **• Debes mencionar a alguien!**")
-("✅ **•**")
